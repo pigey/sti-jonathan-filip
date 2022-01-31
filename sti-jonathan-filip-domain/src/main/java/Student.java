@@ -13,5 +13,35 @@ public class Student {
         this.courseList = courseList;
     }
 
+    public String getfName() {
+        return fName;
+    }
 
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String geteName() {
+        return eName;
+    }
+
+    public void seteName(String eName) {
+        this.eName = eName;
+    }
+
+    public String getPersonNummer() {
+        return personNummer;
+    }
+
+    public void setPersonNummer(String personNummer) {
+        this.personNummer = personNummer;
+    }
+
+    public ArrayList<Course> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(ArrayList<Course> courseList) {
+        this.courseList = courseList;
+    }
 }
