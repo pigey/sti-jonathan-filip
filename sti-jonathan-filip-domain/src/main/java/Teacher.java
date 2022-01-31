@@ -5,9 +5,9 @@ public class Teacher {
     private String eName;
     private String personNummer;
     private ArrayList<Course> courseList = new ArrayList<>();
-    private int hourSalary;
+    private double hourSalary;
 
-    public Teacher(String fName, String eName, String personNummer, ArrayList<Course> courseList, int hourSalary){
+    public Teacher(String fName, String eName, String personNummer, ArrayList<Course> courseList, double hourSalary){
         this.fName = fName;
         this.eName = eName;
         this.personNummer = personNummer;
