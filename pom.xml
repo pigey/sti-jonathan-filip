@@ -33,6 +33,7 @@
     <modules>
         <module>sti-jonathan-filip-domain</module>
         <module>sti-jonathan-filip-service-impl</module>
+        <module>sti-jonathan-filip-unittest</module>
     </modules>
 
     <dependencyManagement>
