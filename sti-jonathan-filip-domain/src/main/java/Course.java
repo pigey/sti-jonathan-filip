@@ -1,21 +1,21 @@
 public class Course {
     private int yhPoints;
     private Teacher teacher;
-    private int courseId;
+    private String courseId;
     private double courseHours;
 
-    public Course(int yhPoints, Teacher teacher, int courseId, double courseHours){
+    public Course(int yhPoints, Teacher teacher, String courseId, double courseHours){
         this.yhPoints = yhPoints;
         this.teacher = teacher;
         this.courseId = courseId;
         this.courseHours = courseHours;
     }
 
-    public int getCourseId() {
+    public String getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(int courseId) {
+    public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
 

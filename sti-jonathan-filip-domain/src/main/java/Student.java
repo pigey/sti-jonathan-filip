@@ -5,6 +5,7 @@ public class Student {
     private String eName;
     private String personNummer;
     private ArrayList<Course> courseList = new ArrayList<>();
+    private Course course;
 
     public Student(String fName, String eName, String personNummer, ArrayList<Course> courseList){
         this.fName = fName;
@@ -43,5 +44,14 @@ public class Student {
 
     public void setCourseList(ArrayList<Course> courseList) {
         this.courseList = courseList;
+    }
+
+    public void addCourse(Course course){
+        courseList.add(course);
+    }
+
+    public void setCourse(Course course){this.course = course;}
+    public void getCourse(){
+
     }
 }
