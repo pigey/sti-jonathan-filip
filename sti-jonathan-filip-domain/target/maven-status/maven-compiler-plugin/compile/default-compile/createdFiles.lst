@@ -1,5 +1,4 @@
-Main.class
-Build.class
-Student.class
-Teacher.class
-Course.class
+sti\jonathan\filip\domain\Course.class
+sti\jonathan\filip\domain\Student.class
+sti\jonathan\filip\domain\Teacher.class
+sti\jonathan\filip\domain\Vault.class

@@ -1,3 +1,7 @@
+package sti.jonathan.filip.domain;
+
+import sti.jonathan.filip.domain.Course;
+
 import java.util.ArrayList;
 
 public class Student {
@@ -8,11 +12,10 @@ public class Student {
 
 
 
-    public Student(String fName, String eName, String personNummer, ArrayList<Course> courseList) {
+    public Student(String fName, String eName, String personNummer) {
         this.fName = fName;
         this.eName = eName;
         this.personNummer = personNummer;
-        this.courseList = courseList;
     }
 
 
@@ -50,6 +53,16 @@ public class Student {
 
     public void addCourse(Course course) {
         courseList.add(course);
+
+    }
+
+    public String toString(){
+        StringBuffer buf = new StringBuffer();
+        buf.append(fName).append(" ").append(eName).append(" ").append(personNummer).append(" #courses = ").append(courseList.size());
+        for (Course c:courseList) {
+            buf.append("\n").append(c.getCourseId());
+        }
+        return buf.toString();
     }
 }
 

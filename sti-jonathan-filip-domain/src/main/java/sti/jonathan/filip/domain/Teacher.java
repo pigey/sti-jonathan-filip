@@ -1,3 +1,7 @@
+package sti.jonathan.filip.domain;
+
+import sti.jonathan.filip.domain.Course;
+
 import java.util.ArrayList;
 
 public class Teacher {
@@ -7,11 +11,14 @@ public class Teacher {
     private ArrayList<Course> courseList = new ArrayList<>();
     private double hourSalary;
 
-    public Teacher(String fName, String eName, String personNummer, ArrayList<Course> courseList, double hourSalary){
+    public Teacher(String fName, String eName, String personNummer, double hourSalary){
         this.fName = fName;
         this.eName = eName;
         this.personNummer = personNummer;
-        this.courseList = courseList;
         this.hourSalary = hourSalary;
+    }
+
+    public String getPersonNummer() {
+        return personNummer;
     }
 }

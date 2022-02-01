@@ -1,8 +1,14 @@
+package sti.jonathan.filip.domain;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Course {
     private int yhPoints;
     private Teacher teacher;
     private String courseId;
     private double courseHours;
+    private List<Student> students = new ArrayList<>();
 
     public Course(int yhPoints, Teacher teacher, String courseId, double courseHours){
         this.yhPoints = yhPoints;
@@ -41,5 +47,19 @@ public class Course {
 
     public void setCourseHours(double courseHours) {
         this.courseHours = courseHours;
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public String toString(){
+        StringBuffer buf = new StringBuffer();
+
+        buf.append(courseId);
+        for (Student s:students) {
+            buf.append("\n").append(s.getfName()).append(" ").append(s.geteName());
+        }
+        return buf.toString();
     }
 }
