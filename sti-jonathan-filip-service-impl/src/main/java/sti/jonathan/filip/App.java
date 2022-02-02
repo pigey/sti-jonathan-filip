@@ -4,7 +4,8 @@ import sti.jonathan.filip.domain.Course;
 import sti.jonathan.filip.domain.Student;
 import sti.jonathan.filip.domain.Teacher;
 import sti.jonathan.filip.domain.Vault;
-import sti.jonathan.filip.service.impl.SchoolService;
+import sti.jonathan.filip.service.SchoolService;
+import sti.jonathan.filip.service.impl.SchoolServiceImpl;
 
 import java.util.Scanner;
 
@@ -15,8 +16,10 @@ public class App {
     Teacher teacher;
     //this main will not be used in springboot
     public static void main(String[] args) {
+        Vault v = new Vault();
+        v.setUp();
         App app = new App();
-        app.setVault(new Vault());
+        app.setVault(v);
         app.setupServices();
         //app.setupData();
         //app.addCoursesToStudents();
@@ -29,7 +32,7 @@ public class App {
     }
 
     public App(){
-        vault.setUp();
+
     }
 
     public void setSchoolService(SchoolService schoolService) {
@@ -86,13 +89,13 @@ public class App {
         int course = scan.nextInt();
         switch(course){
             case 1:
-                schoolService.removeCourse(student,schoolService.getCourse("java"));
+                schoolService.removeCourse(student, schoolService.getCourse("java"));
                 break;
             case 2:
-                schoolService.removeCourse(student,schoolService.getCourse("html"));
+                schoolService.removeCourse(student, schoolService.getCourse("html"));
                 break;
             case 3:
-                schoolService.removeCourse(student,schoolService.getCourse("css"));
+                schoolService.removeCourse(student, schoolService.getCourse("css"));
                 break;
         }
     }
@@ -108,13 +111,13 @@ public class App {
         //todo add try catch ifall man skriver in bokstäver
         switch (userChoice){
             case 1:
-                schoolService.registerCourse(student,schoolService.getCourse("html"));
+                schoolService.registerCourse(student, schoolService.getCourse("html"));
                 break;
             case 2:
-                schoolService.registerCourse(student,schoolService.getCourse("css"));
+                schoolService.registerCourse(student, schoolService.getCourse("css"));
                 break;
             case 3:
-                schoolService.registerCourse(student,schoolService.getCourse("java"));
+                schoolService.registerCourse(student, schoolService.getCourse("java"));
         }
     }
 
@@ -132,7 +135,7 @@ public class App {
     }
 
     private void setupServices() {
-        schoolService = new SchoolService();
+        schoolService = new SchoolServiceImpl();
         schoolService.setVault(vault);
     }
 

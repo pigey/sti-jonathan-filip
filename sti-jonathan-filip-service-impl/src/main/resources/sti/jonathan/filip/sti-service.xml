@@ -9,7 +9,7 @@
 
     </bean>
 
-    <bean id="service" class="sti.jonathan.filip.service.impl.SchoolService">
+    <bean id="service" class="sti.jonathan.filip.service.impl.SchoolServiceImpl">
             <property name="vault" ref="vault"/>
     </bean>
 
