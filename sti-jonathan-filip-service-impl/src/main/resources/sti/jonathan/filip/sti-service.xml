@@ -5,7 +5,13 @@
                 http://www.springframework.org/schema/beans
                 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="service" class="sti.jonathan.filip.service.impl.SchoolService" />
+    <bean id="vault" class="sti.jonathan.filip.domain.Vault">
+
+    </bean>
+
+    <bean id="service" class="sti.jonathan.filip.service.impl.SchoolService">
+            <property name="vault" ref="vault"/>
+    </bean>
 
 
 </beans>

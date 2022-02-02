@@ -1,16 +1,22 @@
 package sti.jonathan.filip.unittest;
 
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import sti.jonathan.filip.domain.Student;
 import sti.jonathan.filip.service.impl.SchoolService;
+import sti.jonathan.filip.domain.Vault;
+
+
 
 public class TestService {
 
     ApplicationContext applicationContext =
-            new ClassPathXmlApplicationContext("classpath:sti-service.xml");
+            new ClassPathXmlApplicationContext("/sti/jonathan/filip/sti-service.xml");
+
 
     private SchoolService schoolService;
 
@@ -26,5 +32,7 @@ public class TestService {
     public void testAddStundent(){
         Student student = new Student("Jonathan", "Birgersson" , "0204054217" );
         schoolService.addStudent(student);
+        assertEquals(student.getfName(),schoolService.getStudent("0204054217").getfName());
     }
+
 }

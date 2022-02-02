@@ -9,19 +9,31 @@ import sti.jonathan.filip.service.impl.SchoolService;
 import java.util.Scanner;
 
 public class App {
-    private Vault vault = new Vault();
+    private Vault vault;
     private SchoolService schoolService;
     Course course;
     Teacher teacher;
+    //this main will not be used in springboot
     public static void main(String[] args) {
         App app = new App();
-        SchoolService setup = new SchoolService(app.vault);
-        setup.setUp();
+        app.setVault(new Vault());
         app.setupServices();
         //app.setupData();
         //app.addCoursesToStudents();
         app.getUserInput();
 
+    }
+
+    private void setVault(Vault vault) {
+        this.vault = vault;
+    }
+
+    public App(){
+        vault.setUp();
+    }
+
+    public void setSchoolService(SchoolService schoolService) {
+        this.schoolService = schoolService;
     }
 
     private void getUserInput() {
@@ -120,7 +132,8 @@ public class App {
     }
 
     private void setupServices() {
-        schoolService = new SchoolService(vault);
+        schoolService = new SchoolService();
+        schoolService.setVault(vault);
     }
 
 }

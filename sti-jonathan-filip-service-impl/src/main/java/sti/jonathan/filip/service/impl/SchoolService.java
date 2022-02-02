@@ -5,14 +5,14 @@ import sti.jonathan.filip.domain.Student;
 import sti.jonathan.filip.domain.Teacher;
 import sti.jonathan.filip.domain.Vault;
 
-public class SchoolService {
+public class SchoolService  {
     private Vault vault;
 
-    public SchoolService(Vault vault){
-        this.vault = vault;
-    }
 
-    public void setUp(){vault.setUp();}
+    public void setVault(Vault vault){
+        this.vault = vault;
+
+    }
 
     public Student getStudent(String personnummer){
         return vault.getStudent(personnummer);
