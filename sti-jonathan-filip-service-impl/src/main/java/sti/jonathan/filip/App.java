@@ -61,6 +61,23 @@ public class App {
 
     private void removeCourse() {
         //todo detta
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Vilken elev vill du ta bort en kurs ifran? Skriv personnummer");
+        String person = scan.nextLine();
+        Student student = schoolService.getStudent(person);
+        System.out.println("vilken kurs vill du ta bort? \n 1.java \n 2.html \n 3.css");
+        int course = scan.nextInt();
+        switch(course){
+            case 1:
+                schoolService.removeCourse(student,schoolService.getCourse("java"));
+                break;
+            case 2:
+                schoolService.removeCourse(student,schoolService.getCourse("html"));
+                break;
+            case 3:
+                schoolService.removeCourse(student,schoolService.getCourse("css"));
+                break;
+        }
     }
 
     private void registerCourse() {

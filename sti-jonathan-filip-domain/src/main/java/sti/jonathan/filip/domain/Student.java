@@ -54,6 +54,9 @@ public class Student {
     public void addCourse(Course course) {
         courseList.add(course);
     }
+    public void removeCourse(Course course){
+        courseList.remove(course);
+    }
 
     public String toString(){
         StringBuffer buf = new StringBuffer();

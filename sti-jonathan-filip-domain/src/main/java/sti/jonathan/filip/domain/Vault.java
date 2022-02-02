@@ -34,6 +34,7 @@ public class Vault {
     public void addCourse(Course course){
         courses.add(course);
     }
+    public void removeCourse(Course course){courses.remove(course);}
 
     public List<Student> getStudents() {
         return students;

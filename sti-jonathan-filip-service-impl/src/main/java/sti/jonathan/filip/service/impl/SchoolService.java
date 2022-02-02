@@ -45,4 +45,8 @@ public class SchoolService {
         student.addCourse(course);
         course.addStudent(student);
     }
+    public void removeCourse(Student student, Course course){
+        student.removeCourse(course);
+        course.removeStudent(student);
+    }
 }

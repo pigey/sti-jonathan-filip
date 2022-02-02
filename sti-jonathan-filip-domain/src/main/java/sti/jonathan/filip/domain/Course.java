@@ -52,6 +52,7 @@ public class Course {
     public void addStudent(Student student) {
         students.add(student);
     }
+    public void removeStudent(Student student){students.remove(student);}
 
     public String toString(){
         StringBuffer buf = new StringBuffer();
