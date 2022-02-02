@@ -16,7 +16,6 @@ public class App {
         app.setupServices();
         app.setupData();
         app.addCoursesToStudents();
-        app.test();
         app.getUserInput();
     }
 
@@ -52,6 +51,10 @@ public class App {
         System.out.println("Skriv Students personnummer");
         String person = scan.nextLine();
         Student student = schoolService.getStudent(person);
+        if (student == null){
+            System.out.println("finns ingen med detta personnummer \n");
+        }
+        else
         System.out.println(student);
     }
 
@@ -88,14 +91,6 @@ public class App {
 
         Student student = new Student(fName, eName, personnummer);
         schoolService.addStudent(student);
-    }
-
-    public void test(){
-        String test ="0012315555";
-        Student student = schoolService.getStudent(test);
-        System.out.println(student);
-
-        //System.out.println(schoolService.getCourse("java"));
     }
 
     private void setupServices() {
