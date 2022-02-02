@@ -11,12 +11,17 @@ import java.util.Scanner;
 public class App {
     private Vault vault = new Vault();
     private SchoolService schoolService;
+    Course course;
+    Teacher teacher;
     public static void main(String[] args) {
         App app = new App();
+        SchoolService setup = new SchoolService(app.vault);
+        setup.setUp();
         app.setupServices();
-        app.setupData();
-        app.addCoursesToStudents();
+        //app.setupData();
+        //app.addCoursesToStudents();
         app.getUserInput();
+
     }
 
     private void getUserInput() {
@@ -118,46 +123,4 @@ public class App {
         schoolService = new SchoolService(vault);
     }
 
-    private void addCoursesToStudents() {
-        Student filip = schoolService.getStudent("0002251111");
-
-        schoolService.registerCourse(filip,schoolService.getCourse("java"));
-        schoolService.registerCourse(filip,schoolService.getCourse("html"));
-        schoolService.registerCourse(filip,schoolService.getCourse("css"));
-
-
-        Student john = schoolService.getStudent("0012315555");
-
-        schoolService.registerCourse(john,schoolService.getCourse("java"));
-        schoolService.registerCourse(john,schoolService.getCourse("html"));
-
-    }
-
-    public void setupData(){
-
-
-        Teacher teacher1 = new Teacher("Bert","Gustavsson","9503531111",300);
-        schoolService.addTeacher(teacher1);
-
-        Course java = new Course(20,teacher1,"java",25);
-        Course html = new Course(20,teacher1,"html",25);
-        Course css = new Course(20,teacher1,"css",25);
-
-        schoolService.addCourse(java);
-        schoolService.addCourse(html);
-        schoolService.addCourse(css);
-
-        Student filip = new Student("filip","mathsson","0002251111");
-
-        schoolService.addStudent(filip);
-
-
-
-
-        Student john = new Student("john","johnsson","0012315555");
-
-        schoolService.addStudent(john);
-
-
-    }
 }

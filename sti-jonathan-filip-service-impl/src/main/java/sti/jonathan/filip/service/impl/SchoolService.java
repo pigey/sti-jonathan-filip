@@ -12,6 +12,8 @@ public class SchoolService {
         this.vault = vault;
     }
 
+    public void setUp(){vault.setUp();}
+
     public Student getStudent(String personnummer){
         return vault.getStudent(personnummer);
     }

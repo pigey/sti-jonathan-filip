@@ -34,7 +34,7 @@ public class Vault {
     public void addCourse(Course course){
         courses.add(course);
     }
-    public void removeCourse(Course course){courses.remove(course);}
+    //public void removeCourse(Course course){courses.remove(course);}
 
     public List<Student> getStudents() {
         return students;
@@ -78,4 +78,40 @@ public class Vault {
         }
         return null;
     }
+
+    public void setUp(){
+        Teacher teacher1 = new Teacher("Bert","Gustavsson","9503531111",300);
+        teachers.add(teacher1);
+
+        Course java = new Course(20,teacher1,"java",25);
+        Course html = new Course(20,teacher1,"html",25);
+        Course css = new Course(20,teacher1,"css",25);
+
+        courses.add(java);
+        courses.add(html);
+        courses.add(css);
+
+        Student filip = new Student("filip","mathsson","0002251111");
+
+        students.add(filip);
+
+
+
+
+        Student john = new Student("john","johnsson","0012315555");
+
+        students.add(john);
+
+        //Student filip = schoolService.getStudent("0002251111");
+
+        filip.addCourse(java);
+        filip.addCourse(html);
+        filip.addCourse(css);
+
+       // Student john = schoolService.getStudent("0012315555");
+
+        john.addCourse(java);
+        john.addCourse(html);
+    }
+
 }
