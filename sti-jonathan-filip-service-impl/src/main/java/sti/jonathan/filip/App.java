@@ -25,6 +25,7 @@ public class App {
         while(loop) {
             System.out.println("Menu \n 1.Add Student \n 2.Register Course \n 3.Remove Course \n 4.Get Student \n 5.Exit");
             int userChoice = scan.nextInt();
+            //todo lägg till trycatch
             switch (userChoice) {
                 case 1:
                     registerStudent();
@@ -59,15 +60,18 @@ public class App {
     }
 
     private void removeCourse() {
+        //todo detta
     }
 
     private void registerCourse() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Vilken student ska du registrera en kurs till?\n skriv personnummer");
         String person =scan.nextLine();
+        // todo kolla så att den inte blir null innan vi försöker lägga till kurser
         Student student = schoolService.getStudent(person);
         System.out.println("vilken kurs vill du registrera?\n 1.html \n 2.css \n 3.java");
         int userChoice = scan.nextInt();
+        //todo add try catch ifall man skriver in bokstäver
         switch (userChoice){
             case 1:
                 schoolService.registerCourse(student,schoolService.getCourse("html"));
