@@ -22,12 +22,58 @@ public class App {
 
     private void getUserInput() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Menu \n 1.Add Student");
+        boolean loop = true;
+        while(loop) {
+            System.out.println("Menu \n 1.Add Student \n 2.Register Course \n 3.Remove Course \n 4.Get Student \n 5.Exit");
+            int userChoice = scan.nextInt();
+            switch (userChoice) {
+                case 1:
+                    registerStudent();
+                    break;
+                case 2:
+                    registerCourse();
+                    break;
+                case 3:
+                    removeCourse();
+                    break;
+                case 4:
+                    getStudent();
+                    break;
+                case 5:
+                    System.out.println("bye");
+                    loop = false;
+
+            }
+        }
+    }
+
+    private void getStudent() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Skriv Students personnummer");
+        String person = scan.nextLine();
+        Student student = schoolService.getStudent(person);
+        System.out.println(student);
+    }
+
+    private void removeCourse() {
+    }
+
+    private void registerCourse() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Vilken student ska du registrera en kurs till?\n skriv personnummer");
+        String person =scan.nextLine();
+        Student student = schoolService.getStudent(person);
+        System.out.println("vilken kurs vill du registrera?\n 1.html \n 2.css \n 3.java");
         int userChoice = scan.nextInt();
         switch (userChoice){
             case 1:
-                registerStudent();
+                schoolService.registerCourse(student,schoolService.getCourse("html"));
                 break;
+            case 2:
+                schoolService.registerCourse(student,schoolService.getCourse("css"));
+                break;
+            case 3:
+                schoolService.registerCourse(student,schoolService.getCourse("java"));
         }
     }
 
@@ -49,7 +95,7 @@ public class App {
         Student student = schoolService.getStudent(test);
         System.out.println(student);
 
-        System.out.println(schoolService.getCourse("java"));
+        //System.out.println(schoolService.getCourse("java"));
     }
 
     private void setupServices() {

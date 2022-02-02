@@ -53,7 +53,6 @@ public class Student {
 
     public void addCourse(Course course) {
         courseList.add(course);
-
     }
 
     public String toString(){
@@ -62,6 +61,7 @@ public class Student {
         for (Course c:courseList) {
             buf.append("\n").append(c.getCourseId());
         }
+        buf.append("\n");
         return buf.toString();
     }
 }
