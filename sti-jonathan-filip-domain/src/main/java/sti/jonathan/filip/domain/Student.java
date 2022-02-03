@@ -60,7 +60,7 @@ public class Student {
 
     public String toString(){
         StringBuffer buf = new StringBuffer();
-        buf.append(fName).append(" ").append(eName).append(" ").append(personNummer).append(" #courses = ").append(courseList.size());
+        buf.append(fName).append(" ").append(eName).append(" ").append(personNummer).append(" Courses:");
         for (Course c:courseList) {
             buf.append("\n").append(c.getCourseId());
         }
