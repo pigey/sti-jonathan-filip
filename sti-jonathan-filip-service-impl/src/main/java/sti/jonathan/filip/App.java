@@ -182,6 +182,8 @@ public class App {
         schoolService.addStudent(student);
     }
 
+    //todo lägga till lärarens månads lön samt medellön för lärare
+
     private void setupServices() {
         schoolService = new SchoolServiceImpl();
         schoolService.setVault(vault);
