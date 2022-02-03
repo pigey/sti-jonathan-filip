@@ -16,7 +16,7 @@ public class App {
     private SchoolService schoolService;
     Course course;
     Teacher teacher;
-    //this main will not be used in springboot
+
     public static void main(String[] args) {
         Vault v = new Vault();
         v.setUp();
@@ -169,7 +169,7 @@ public class App {
 
 
     }
-//todo se till satt personnummer bara är siffror och är 10 char long
+
     private void registerStudent() {
         Scanner scan = new Scanner(System.in);
         System.out.println("First name: ");
