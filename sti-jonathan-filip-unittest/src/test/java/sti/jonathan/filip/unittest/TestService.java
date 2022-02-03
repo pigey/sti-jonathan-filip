@@ -28,9 +28,9 @@ public class TestService {
 
     @Test
     public void testAddStundent(){
-        Student student = new Student("Jonathan", "Birgersson" , "0204054217" );
+        Student student = new Student("Johan", "Johansson" , "6412315555" );
         schoolService.addStudent(student);
-        assertEquals(student.getfName(), schoolService.getStudent("0204054217").getfName());
+        assertEquals(student.getfName(), schoolService.getStudent("6412315555").getfName());
     }
 
 }
