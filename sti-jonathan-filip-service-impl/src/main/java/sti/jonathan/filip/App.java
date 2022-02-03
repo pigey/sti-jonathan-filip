@@ -65,6 +65,7 @@ public class App {
                     case 5:
                         System.out.println("bye");
                         loop = false;
+                        break;
                     default:
                         System.out.println("skriv en siffra mellan 1-5!");
 
