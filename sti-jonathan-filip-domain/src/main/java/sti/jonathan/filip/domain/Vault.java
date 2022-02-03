@@ -102,13 +102,11 @@ public class Vault {
 
         students.add(john);
 
-        //Student filip = schoolService.getStudent("0002251111");
 
         filip.addCourse(java);
         filip.addCourse(html);
         filip.addCourse(css);
 
-       // Student john = schoolService.getStudent("0012315555");
 
         john.addCourse(java);
         john.addCourse(html);
