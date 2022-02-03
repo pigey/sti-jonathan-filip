@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import sti.jonathan.filip.domain.Course;
 import sti.jonathan.filip.domain.Student;
 import sti.jonathan.filip.service.SchoolService;
 
@@ -28,9 +29,9 @@ public class TestService {
 
     @Test
     public void testAddStundent(){
-        Student student = new Student("Jonathan", "Birgersson" , "0204054217" );
+        Student student = new Student("Janne", "Jansson" , "651231555" );
         schoolService.addStudent(student);
-        assertEquals(student.getfName(), schoolService.getStudent("0204054217").getfName());
+        assertEquals(student.getfName(), schoolService.getStudent("651231555").getfName());
     }
 
 }
