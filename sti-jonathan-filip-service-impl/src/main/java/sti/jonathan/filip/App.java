@@ -177,7 +177,29 @@ public class App {
         System.out.println("Last name: ");
         String eName = scan.nextLine();
         System.out.println("Personnummer: ");
-        String personnummer = scan.nextLine();
+        String personnummer =scan.nextLine();
+        boolean check = true;
+        int isAlpha = 0;
+        while(check) {
+
+
+            char personnum;
+            for (int i = 0; i < personnummer.length(); i++) {
+                personnum = personnummer.charAt(i);
+                if (Character.isAlphabetic(personnum)){
+                    isAlpha++;
+                }
+
+            }
+            if (personnummer.length() == 10 && isAlpha == 0){
+                check = false;
+            }
+            else{
+                System.out.println("Personnummer ska va 10 siffror och ska inte ha bokstaver");
+                isAlpha = 0;
+                personnummer =scan.nextLine();
+            }
+        }
 
         Student student = new Student(fName, eName, personnummer);
         schoolService.addStudent(student);
