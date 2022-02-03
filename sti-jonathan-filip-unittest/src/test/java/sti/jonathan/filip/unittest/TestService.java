@@ -13,7 +13,7 @@ import sti.jonathan.filip.service.SchoolService;
 public class TestService {
 
     ApplicationContext applicationContext =
-            new ClassPathXmlApplicationContext("/sti/jonathan/filip/sti-service.xml");
+            new ClassPathXmlApplicationContext("/sti-service.xml");
 
 
     private SchoolService schoolService;

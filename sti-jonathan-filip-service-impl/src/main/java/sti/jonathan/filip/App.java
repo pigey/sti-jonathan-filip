@@ -80,7 +80,6 @@ public class App {
     }
 
     private void removeCourse() {
-        //todo detta
         Scanner scan = new Scanner(System.in);
         System.out.println("Vilken elev vill du ta bort en kurs ifran? Skriv personnummer");
         String person = scan.nextLine();
